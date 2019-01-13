@@ -1,0 +1,33 @@
+li {
+  list-style: none;
+}
+
+input[type=text] {
+  background: $color-white;
+  border: none;
+  outline: none;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $color-primary;
+  font-size: 1.8rem;
+}
+
+button {
+  background: $color-white;
+  border: 2px solid $color-primary;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  border-radius: 15rem;
+  cursor: pointer;
+  transition: all .2s;
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 .5rem .5rem 0px rgba($color-black, 0.1);
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
