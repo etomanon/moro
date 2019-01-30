@@ -1,56 +1,12 @@
 import {
-  PENDING, FULFILLED, REJECTED, FILTER_ALL, FILTER_ACTIVE, FILTER_COMPLETED,
+  PENDING, FULFILLED, REJECTED, FILTER_ALL,
   TODOS_GET, TODOS_ADD, TODOS_DELETE, TODOS_DELETE_LOCALLY, TODOS_COMPLETE,
   TODOS_COMPLETE_LOCALLY, TODOS_INCOMPLETE, TODOS_INCOMPLETE_LOCALLY,
   TODOS_FILTER, TODOS_ERROR, TODOS_COUNT_COMPLETED, TODOS_EDIT_TOGGLE,
   TODOS_EDIT_TEXT, TODOS_EDIT_TEXT_LOCALLY
 } from '../actions/todos';
 
-const pending = (state) => {
-  return {
-    ...state,
-    pending: true,
-    error: false,
-    errorText: ''
-  }
-}
-
-const rejected = (state, action) => {
-  return {
-    ...state,
-    pending: false,
-    error: true,
-    errorText: action.payload.message
-  }
-}
-
-// toggle completed status and keep filtered only
-const toggleCompleted = (state, action) => {
-  const { items, filter } = state;
-  const { payload } = action;
-  return items
-    .map(item =>
-      item.id === payload ?
-        { ...item, completed: !item.completed }
-        :
-        item
-    )
-    .filter(item => item.id !== payload ? true : isVisible(filter, item))
-}
-
-// if todo item should be visible according to current filter
-const isVisible = (filter, item) => {
-  switch (filter) {
-    case FILTER_ALL:
-      return true;
-    case FILTER_ACTIVE:
-      return !item.completed
-    case FILTER_COMPLETED:
-      return item.completed
-    default:
-      return true;
-  }
-}
+import { pending, rejected, isVisible, toggleCompleted } from './todosUtils';
 
 const todos = (state = {
   items: [],

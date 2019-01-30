@@ -1,0 +1,23 @@
+{
+  "todos": [
+    {
+      "id": "519c2e60-247e-11e9-9929-b50b0dfd049b",
+      "text": "Lunch",
+      "completed": true,
+      "createdDate": 1548846056518,
+      "completedDate": 1548846068403
+    },
+    {
+      "id": "52c740e0-247e-11e9-9929-b50b0dfd049b",
+      "text": "Meeting",
+      "completed": false,
+      "createdDate": 1548846058478
+    },
+    {
+      "id": "54b2bd30-247e-11e9-9929-b50b0dfd049b",
+      "text": "Lesson",
+      "completed": false,
+      "createdDate": 1548846061699
+    }
+  ]
+}

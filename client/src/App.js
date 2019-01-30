@@ -35,6 +35,9 @@ class App extends Component {
           todosDeleteAll={todosDeleteAll}
           itemsCompleted={itemsCompleted}
         />
+        <div className="u-center-text u-mt-s">
+          <span className="color-primary">Hint:</span> Double-click on todo to enable editing
+          </div>
         <InputForm
           todosAdd={todosAdd}
         />
